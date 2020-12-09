@@ -46,6 +46,8 @@
             this.ExpireDateTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.OptionTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.VehicleType = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // RentIntroText
@@ -184,22 +186,40 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(47, 175);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.Size = new System.Drawing.Size(69, 13);
             this.label9.TabIndex = 23;
-            this.label9.Text = "Rent option";
+            this.label9.Text = "Vehicle Type";
             // 
             // OptionTextBox
             // 
-            this.OptionTextBox.Location = new System.Drawing.Point(218, 168);
+            this.OptionTextBox.Location = new System.Drawing.Point(218, 147);
             this.OptionTextBox.Name = "OptionTextBox";
             this.OptionTextBox.Size = new System.Drawing.Size(100, 20);
             this.OptionTextBox.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(47, 147);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Rent option";
+            // 
+            // VehicleType
+            // 
+            this.VehicleType.Location = new System.Drawing.Point(218, 176);
+            this.VehicleType.Name = "VehicleType";
+            this.VehicleType.Size = new System.Drawing.Size(100, 20);
+            this.VehicleType.TabIndex = 26;
             // 
             // AddRentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 450);
+            this.Controls.Add(this.VehicleType);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.OptionTextBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.ExpireDateTextBox);
@@ -246,5 +266,7 @@
         private System.Windows.Forms.TextBox ExpireDateTextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox OptionTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox VehicleType;
     }
 }

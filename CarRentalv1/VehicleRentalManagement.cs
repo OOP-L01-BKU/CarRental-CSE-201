@@ -16,8 +16,6 @@ namespace CarRentalv1
 
         public List<Fleet> ListOfFleet = new List<Fleet>();
         private List<Rent> _listOfRents = new List<Rent>();
-        private int _count = 0;
-        private static int _countRent = 0;
 
         public Fleet GetFleetByID(int id)
         {
@@ -56,12 +54,10 @@ namespace CarRentalv1
         public void AddNewFleet()
         {
             ListOfFleet.Add(new Fleet());
-            _count++;
         }
 
         private void _addNewRent(Rent rent)
         {
-            _countRent++;
             _listOfRents.Add(rent);
         }
 

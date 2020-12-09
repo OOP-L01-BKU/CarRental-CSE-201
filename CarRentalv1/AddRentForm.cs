@@ -13,12 +13,11 @@ namespace CarRentalv1
     public partial class AddRentForm : Form
     {
         public VehicleRentalManagement rootModel = null; 
-        private string _vehicleType = ""; 
+        private string vehicleType = ""; 
 
-        public AddRentForm(VehicleRentalManagement vehicleRentalManagementModel,string vehicleType)
+        public AddRentForm(VehicleRentalManagement vehicleRentalManagementModel)
         {
             this.rootModel = vehicleRentalManagementModel;
-            this._vehicleType = vehicleType; 
             InitializeComponent();
             RentIntroText.Text = "Please fill the following form\r\nOption 1: Create empty Rent with no argument\r\nOption2" +
                 ": Create an Rent with Customer Name, Customer SSN,ID\r\nOpiton 3: Create an Rent with Customer Name, Customer SSN,ID,Price and Deposit\r\nElse : Create an Rent with Customer Name, Customer SSN,ID,Price, Deposit,Rent Date and Expire Date";
@@ -35,6 +34,12 @@ namespace CarRentalv1
             DateTime timeRent, timeExpire;
             string customerSSN = CustomerNameTextBox.Text;
             string customerName = CustomerNameTextBox.Text;
+            string vehicleType = VehicleType.Text; 
+            if (vehicleType != "Truck " && vehicleType != "Car")
+            {
+                MessageBox.Show("Vehicle Type must be Car or Truck");
+                return;
+            }
             int option = 1;
             try
             {
@@ -70,7 +75,7 @@ namespace CarRentalv1
 
             if (option == 2)
             {
-                if (!rootModel.BookAndRent(customerName,customerSSN,vehicleID, _vehicleType))
+                if (!rootModel.BookAndRent(customerName,customerSSN,vehicleID, vehicleType))
                 {
                     MessageBox.Show("Vehicle has been rented or doesn't existed");
                 }
@@ -107,7 +112,7 @@ namespace CarRentalv1
 
             if (option == 3)
             {
-                if (!rootModel.BookAndRent(customerName, customerSSN, vehicleID, this._vehicleType, price, deposit))
+                if (!rootModel.BookAndRent(customerName, customerSSN, vehicleID, this.vehicleType, price, deposit))
                 {
                     MessageBox.Show("Vehicle has been rented or doesn't existed");
                 }
@@ -139,7 +144,7 @@ namespace CarRentalv1
           
 
 
-            if (!rootModel.BookAndRent(customerName, customerSSN, vehicleID, _vehicleType,price,deposit,timeRent,timeExpire))
+            if (!rootModel.BookAndRent(customerName, customerSSN, vehicleID, vehicleType,price,deposit,timeRent,timeExpire))
             {
                 MessageBox.Show("Vehicle has been rented or doesn't existed");
             }else

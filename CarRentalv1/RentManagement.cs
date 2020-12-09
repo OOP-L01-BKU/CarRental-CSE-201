@@ -22,7 +22,7 @@ namespace CarRentalv1
 
         private void AddRentButton_Click(object sender, EventArgs e)
         {
-            BookAndRentForm bookAndRentForm = new BookAndRentForm(rootModel);
+            AddRentForm bookAndRentForm = new AddRentForm(rootModel);
             bookAndRentForm.Show();
         }
 
