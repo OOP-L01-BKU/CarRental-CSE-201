@@ -47,7 +47,8 @@ namespace CarRentalv1
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            MaintenanceOperator maintenanceOperator = new MaintenanceOperator(_data);
+            maintenanceOperator.Show();
         }
 
         private void BookAndRentButton_Click(object sender, EventArgs e)

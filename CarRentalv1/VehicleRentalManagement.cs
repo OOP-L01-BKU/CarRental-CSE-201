@@ -268,24 +268,38 @@ namespace CarRentalv1
             }
             return info; 
         }
-        public float PerformSubtractionOperator(int carID, int index1, int index2)
+        public float PerformSubtractionOperator(int vehicleId, int index1, int index2)
         {
-            foreach (Fleet i in ListOfFleet)
+            object o = GetVehicleByID(vehicleId);
+            if ((o.GetType()).Equals(typeof(Car)) && ((Car)o).ID == vehicleId)
             {
-                return i.PerformSubtractionOperator(carID, index1, index2);
-
+                return ((Car)o).SuctractRecord(index1, index2);
             }
-            return -1 ;
+            else if ((o.GetType()).Equals(typeof(Truck)) && ((Truck)o).ID == vehicleId)
+            {
+                return ((Truck)o).SuctractRecord(index1, index2);
+            }
+            else
+            {
+                throw new System.Exception();
+            }
+
         }
-        public bool PerformSmallerOperator(int carID, int index1, int index2)
+        public bool PerformSmallerOperator(int vehicleId, int index1, int index2)
         {
-            foreach (Fleet i in ListOfFleet)
+            object o = GetVehicleByID(vehicleId);
+            if ((o.GetType()).Equals(typeof(Car)) && ((Car)o).ID == vehicleId)
             {
-
-                return i.PerformSmallerOperator(carID, index1, index2);
-
+                return ((Car)o).CompareLesserThanRecord(index1, index2);
             }
-            return false ;
+            else if ((o.GetType()).Equals(typeof(Truck)) && ((Truck)o).ID == vehicleId)
+            {
+                return ((Truck)o).CompareLesserThanRecord(index1, index2);
+            }
+            else
+            {
+                throw new System.Exception();
+            }
         }
 
         public bool SaveServiceOfVehicle(int vehicleId)

@@ -24,3 +24,4 @@ C:\Users\ASUS\Desktop\OOPv1\CarRentalv1\CarRentalv1\obj\Debug\CarRentalv1.AddAnd
 C:\Users\ASUS\Desktop\OOPv1\CarRentalv1\CarRentalv1\obj\Debug\CarRentalv1.DisplayServiceHistory.resources
 C:\Users\ASUS\Desktop\OOPv1\CarRentalv1\CarRentalv1\obj\Debug\CarRentalv1.Json.resources
 C:\Users\ASUS\Desktop\OOPv1\CarRentalv1\CarRentalv1\obj\Debug\CarRentalv1.csproj.CopyComplete
+C:\Users\ASUS\Desktop\OOPv1\CarRentalv1\CarRentalv1\obj\Debug\CarRentalv1.MaintenanceOperator.resources
