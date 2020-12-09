@@ -16,11 +16,11 @@ namespace CarRentalv1
         string garageName;
         int price;
 
-        VehicleRentalManagement rootModel = null;
+        VehicleRentalManagement _data = null;
 
         public ServiceForFleet(VehicleRentalManagement vehicleRentalManagementModel)
         {
-            this.rootModel = vehicleRentalManagementModel;
+            this._data = vehicleRentalManagementModel;
             InitializeComponent();
         }
 
@@ -41,7 +41,7 @@ namespace CarRentalv1
             {
                 price = int.Parse(textBox2.Text);
                 int fleetId = int.Parse(FleetID.Text);
-                Fleet f = rootModel.GetFleetByID(fleetId);
+                Fleet f = _data.GetFleetByID(fleetId);
 
                 if (f.RecordServiceForFleet(type, garageName, price))
                 {

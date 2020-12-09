@@ -12,10 +12,10 @@ namespace CarRentalv1
 {
     public partial class DeleteRent : Form
     {
-        VehicleRentalManagement rootModel = new VehicleRentalManagement();
+        VehicleRentalManagement _data;
         public DeleteRent(VehicleRentalManagement vehicleRentalManagementModel)
         {
-            this.rootModel = vehicleRentalManagementModel;
+            this._data = vehicleRentalManagementModel;
             InitializeComponent();
         }
         private void DeleteRent_Load(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace CarRentalv1
                 return;
             }
 
-            if (!rootModel.DeleteRent(rentId))
+            if (!_data.DeleteRent(rentId))
             {
                 MessageBox.Show("Vehicle doesn't existed");
             }

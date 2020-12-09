@@ -13,11 +13,11 @@ namespace CarRentalv1
     public partial class FleetManagement : Form
     {
         string type = "all";
-        VehicleRentalManagement rootModel = null;
+        VehicleRentalManagement _data = null;
 
         public FleetManagement(VehicleRentalManagement vehicleRentalManagementModel)
         {
-            this.rootModel = vehicleRentalManagementModel;
+            this._data = vehicleRentalManagementModel;
             InitializeComponent();
         }
 
@@ -26,7 +26,7 @@ namespace CarRentalv1
         private void button1_Click(object sender, EventArgs e)
         {
             
-            AddVehicleForm addForm = new AddVehicleForm(rootModel);
+            AddVehicleForm addForm = new AddVehicleForm(_data);
             addForm.Show();
         }
 
@@ -75,7 +75,7 @@ namespace CarRentalv1
             string rentCostUp = (string.IsNullOrWhiteSpace(textBox2.Text)) ? "0" : (this.textBox2.Text);
             int rentCostDown = (string.IsNullOrWhiteSpace(textBox3.Text)) ? 0 : int.Parse(this.textBox3.Text);
 
-            foreach (Fleet fleet in rootModel.ListOfFleet)
+            foreach (Fleet fleet in _data.ListOfFleet)
             {
                 listView1.Items.Add("Fleet ID : " + fleet.ID);
                 _appendVehicleInfo(brand, rentCostUp, rentCostDown, fleet);
@@ -91,7 +91,7 @@ namespace CarRentalv1
 
         private Fleet _findFleetById(int id)
         {
-            foreach (Fleet fleet in rootModel.ListOfFleet)
+            foreach (Fleet fleet in _data.ListOfFleet)
             {
                 if (fleet.ID == id) return fleet; 
             }
@@ -137,7 +137,7 @@ namespace CarRentalv1
         // service for all vehicle in fleet
         private void button5_Click(object sender, EventArgs e)
         {
-            ServiceForFleet serFleet = new ServiceForFleet(rootModel);
+            ServiceForFleet serFleet = new ServiceForFleet(_data);
             serFleet.Show();
         }
     }

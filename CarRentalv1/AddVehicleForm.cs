@@ -18,11 +18,11 @@ namespace CarRentalv1
         private string brand;
         private float mileAge;
 
-        VehicleRentalManagement rootModel = null;
+        VehicleRentalManagement _data = null;
 
         public AddVehicleForm(VehicleRentalManagement vehicleRentalManagementModel)
         {
-            this.rootModel = vehicleRentalManagementModel;
+            this._data = vehicleRentalManagementModel;
             InitializeComponent();
         }
 
@@ -35,7 +35,7 @@ namespace CarRentalv1
             try
             {
                 int fleetId = int.Parse(FleetID.Text);
-                Fleet f = rootModel.GetFleetByID(fleetId);
+                Fleet f = _data.GetFleetByID(fleetId);
 
                 if (this.plateCode == null || this.type == null)
                 {

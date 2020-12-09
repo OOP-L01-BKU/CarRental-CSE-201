@@ -12,35 +12,35 @@ namespace CarRentalv1
 {
     public partial class RentManagement : Form
     {
-        VehicleRentalManagement rootModel = null; 
+        VehicleRentalManagement _data = null; 
         public RentManagement(VehicleRentalManagement vehicleRentalManagementModel)
         {
-            this.rootModel = vehicleRentalManagementModel;
+            this._data = vehicleRentalManagementModel;
             InitializeComponent();
             IntroText.Font = new Font("Arial", 24, FontStyle.Bold);
         }
 
         private void AddRentButton_Click(object sender, EventArgs e)
         {
-            AddRentForm bookAndRentForm = new AddRentForm(rootModel);
+            AddRentForm bookAndRentForm = new AddRentForm(_data);
             bookAndRentForm.Show();
         }
 
         private void ViewAllRentButton_Click(object sender, EventArgs e)
         {
-            ViewAllRents viewAllRents = new ViewAllRents(rootModel);
+            ViewAllRents viewAllRents = new ViewAllRents(_data);
             viewAllRents.Show();
         }
 
         private void UpdateRentButton_Click(object sender, EventArgs e)
         {
-            UpdateRent updateRent = new UpdateRent(rootModel);
+            UpdateRent updateRent = new UpdateRent(_data);
             updateRent.Show();
         }
 
         private void DeleteRentButton_Click(object sender, EventArgs e)
         {
-            DeleteRent deleteRent = new DeleteRent(rootModel);
+            DeleteRent deleteRent = new DeleteRent(_data);
             deleteRent.Show();
         }
 

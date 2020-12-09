@@ -19,7 +19,7 @@ namespace CarRentalv1
         string brand;
         float mileAge;
         string typeService;
-        public Fleet f = new Fleet();
+        public Fleet f;
         public VehicleInfoForm(Fleet f1, int id)
         {
             this.f = f1;

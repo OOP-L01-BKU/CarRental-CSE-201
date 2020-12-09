@@ -12,7 +12,7 @@ namespace CarRentalv1
 {
     public partial class ViewServiceHistory : Form
     {
-        List<Record> r = new List<Record>();
+        List<Record> r;
         public ViewServiceHistory(List<Record> r1)
         {
             this.r = r1;

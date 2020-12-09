@@ -12,10 +12,10 @@ namespace CarRentalv1
 {
     public partial class VehicleManagementForm : Form
     {
-        VehicleRentalManagement rootModel = null; 
+        VehicleRentalManagement _data = null; 
         public VehicleManagementForm(VehicleRentalManagement vehicleRentalManagementModel)
         {
-            this.rootModel = vehicleRentalManagementModel; 
+            this._data = vehicleRentalManagementModel; 
             InitializeComponent();
             IntroText.Font = new Font("Arial", 24, FontStyle.Bold);
         }
@@ -56,7 +56,7 @@ namespace CarRentalv1
 
         private void RentManagment_Click(object sender, EventArgs e)
         {
-            RentManagement rentManagement = new RentManagement(rootModel);
+            RentManagement rentManagement = new RentManagement(_data);
             rentManagement.Show();
         }
 
@@ -72,7 +72,7 @@ namespace CarRentalv1
 
         private void FleetManagementButton_Click(object sender, EventArgs e)
         {
-            FleetManagement fleetManagement = new FleetManagement(this.rootModel);
+            FleetManagement fleetManagement = new FleetManagement(this._data);
             fleetManagement.Show();
         }
     }

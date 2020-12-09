@@ -12,10 +12,10 @@ namespace CarRentalv1
 {
     public partial class UpdateRent : Form
     {
-        VehicleRentalManagement rootModel = null; 
+        VehicleRentalManagement _data = null; 
         public UpdateRent(VehicleRentalManagement vehicleRentalManagementModel)
         {
-            this.rootModel = vehicleRentalManagementModel;
+            this._data = vehicleRentalManagementModel;
             InitializeComponent();
         }
 
@@ -99,7 +99,7 @@ namespace CarRentalv1
 
 
 
-            if (!rootModel.UpdateRent(rentId,customerName, customerSSN, vehicleID, vehicleType, price, deposit, timeRent, timeExpire))
+            if (!_data.UpdateRent(rentId,customerName, customerSSN, vehicleID, vehicleType, price, deposit, timeRent, timeExpire))
             {
                 MessageBox.Show("Vehicle  doesn't existed");
             }

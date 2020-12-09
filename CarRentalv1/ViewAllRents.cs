@@ -12,13 +12,13 @@ namespace CarRentalv1
 {
     public partial class ViewAllRents : Form
     {
-        public VehicleRentalManagement rootModel = null; 
+        public VehicleRentalManagement _data = null; 
 
         public ViewAllRents(VehicleRentalManagement vehicleRentalManagementModel)
         {
-            this.rootModel = vehicleRentalManagementModel;
+            this._data = vehicleRentalManagementModel;
             InitializeComponent();
-            RentListBox.Text = rootModel.GetListOfRentInfo();
+            RentListBox.Text = _data.GetListOfRentInfo();
         }
         private void RentListBox_TextChanged(object sender, EventArgs e)
         {
