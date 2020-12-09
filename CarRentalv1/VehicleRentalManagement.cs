@@ -28,6 +28,16 @@ namespace CarRentalv1
             return null; 
         }
 
+        public object GetVehicleByID(int id)
+        {
+            foreach (Fleet i in ListOfFleet)
+            {
+                object vehicle = i.PrintVehicleInfo(id);
+                if (vehicle != null) return vehicle;
+            }
+            return null;
+        }
+
         public VehicleRentalManagement()
         {
             this.ListOfFleet.Add(new Fleet());
@@ -163,22 +173,22 @@ namespace CarRentalv1
         public bool UpdateRent(int rentId,string customerName, string customerSSN, int vehicleId, string vehicleType, float price, float deposit, DateTime timeRent, DateTime timeExpire)
         {
             // Find a rent
-            bool isExist = false; 
-            foreach (Rent i in _listOfRents)
+
+            Rent rent = GetRentByRentId(rentId);
+            if (rent != null)
             {
-                if (i.RentID == rentId)
-                {
-                    isExist = true;
-                    if (i.VehicleID != vehicleId)
-                    {
-                        // Update Vehicles rent status
+                //if (rent.VehicleID != vehicleId)
+                //{
+                //    object oldVehicle = GetVehicleByID(rent.VehicleID);
+                //    object newVehicle = GetVehicleByID(vehicleId);
+
+                //}
+                rent = new Rent(customerName, customerSSN, vehicleId, vehicleType, price, deposit, timeRent, timeExpire);
 
 
-                    }
-                    return i.UpdateRent(customerName, customerSSN, vehicleId, vehicleType, price, deposit, timeRent, timeExpire);
-                }
+                return true; 
             }
-            return isExist;
+            return false; 
         }
 
 
@@ -225,21 +235,33 @@ namespace CarRentalv1
             }
         }
 
+        public Rent GetRentByRentId(int id)
+        {
+            foreach (Rent i in _listOfRents)
+            {
+                if (i.RentID == id) return i; 
+            }
+            return null;
+        }
+
+
         // Rent
         public bool DeleteRent(int rentId)
         {
             // Find a rent
-            bool isExist = false;
-            foreach (Rent i in _listOfRents)
+            Rent rent = GetRentByRentId(rentId);
+            object o = GetVehicleByID(rent.VehicleID);
+            if ((o.GetType()).Equals(typeof(Car)))
             {
-                if (i.RentID == rentId)
-                {
-                    isExist = true;
-                    return _listOfRents.Remove(i);
-                    //TODO update vehicle before remove
-                }
+                ((Car)o).IsRented = false;
+                return _listOfRents.Remove(rent);
             }
-            return isExist;
+            else if ((o.GetType()).Equals(typeof(Truck)))
+            {
+                ((Truck)o).IsRented = false;
+                return _listOfRents.Remove(rent);
+            }
+            else return false; 
         }
         public string GetListOfRentInfo()
         {

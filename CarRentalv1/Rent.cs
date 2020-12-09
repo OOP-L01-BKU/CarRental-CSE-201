@@ -3,10 +3,10 @@ using System.Collections.Generic;
 
 namespace CarRentalv1
 {
-    class Rent
+    public class Rent
     {
         static private int _maxId = 0;
-        public int RentID = 0 ; 
+        public int RentID; 
         private DateTime _timeRent;
         private DateTime _timeExpire;
         private float _deposit;
@@ -88,17 +88,18 @@ namespace CarRentalv1
             return true; 
         }
 
+      
         public string GetRentInfo()
         {
             string info = "";
-            info += "RentID: " + _maxId + "\r\n";
+            info += "RentID: " + RentID + "\r\n";
             info += "VehicleID: " + VehicleID + "\r\n";
             info += "CustomerName: " + _customerName + "\r\n";
             info += "CustomerSSN: " + _customerSSN + "\r\n";
             info += "Price: " + _price + "\r\n";
             info += "Deposit: " + _deposit + "\r\n";
             info += "TimeRent: " + _timeRent + "\r\n";
-            info += "TimeExpired: " + _timeExpire + "\r\n";
+            info += "TimeExpired: " + _timeExpire + "\r\n\r\n\r\n";
             return info; 
         }
     }

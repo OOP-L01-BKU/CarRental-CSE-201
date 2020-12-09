@@ -26,26 +26,7 @@ namespace CarRentalv1
 
         private void RentButton_Click(object sender, EventArgs e)
         {
-            //int id = -1; 
-            //try
-            //{
-            //    string carId = CarIDTextBox.Text;
-            //    id  = int.Parse(carId);
-            //    // Rent
-            //    //if (!rootModel.BookAndRent(id))
-            //    //{
-            //    //    MessageBox.Show("Fail to rent a car\nCar has been rented or doesn't exist");
-            //    //}
-            //    //else
-            //    //{
-            //    //    MessageBox.Show("You has sucessfully rented a car");
-            //    //}
-            //}
-            //catch
-            //{
-            //    // Id wrong format 
-            //    MessageBox.Show("Id is wrong format");
-            //}
+           
 
             
         }
