@@ -18,7 +18,7 @@ namespace CarRentalv1
         private string brand;
         private float mileAge;
 
-        VehicleRentalManagement _data = null;
+        private VehicleRentalManagement _data = null;
 
         public AddVehicleForm(VehicleRentalManagement vehicleRentalManagementModel)
         {

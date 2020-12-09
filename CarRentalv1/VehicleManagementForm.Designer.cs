@@ -31,7 +31,6 @@
             this.IntroText = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.JsonExporterButton = new System.Windows.Forms.Button();
-            this.ServiceButton = new System.Windows.Forms.Button();
             this.FleetManagementButton = new System.Windows.Forms.Button();
             this.RentManagementButton = new System.Windows.Forms.Button();
             this.MaintenanceJobOperandButton = new System.Windows.Forms.Button();
@@ -56,8 +55,8 @@
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.MaintenanceJobOperandButton, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.JsonExporterButton, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.ServiceButton, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.FleetManagementButton, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.RentManagementButton, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 89);
@@ -79,17 +78,6 @@
             this.JsonExporterButton.Text = "Json exporter";
             this.JsonExporterButton.UseVisualStyleBackColor = true;
             this.JsonExporterButton.Click += new System.EventHandler(this.JsonExporterButton_Click);
-            // 
-            // ServiceButton
-            // 
-            this.ServiceButton.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ServiceButton.Location = new System.Drawing.Point(3, 105);
-            this.ServiceButton.Name = "ServiceButton";
-            this.ServiceButton.Size = new System.Drawing.Size(259, 97);
-            this.ServiceButton.TabIndex = 2;
-            this.ServiceButton.Text = "Service";
-            this.ServiceButton.UseVisualStyleBackColor = true;
-            this.ServiceButton.Click += new System.EventHandler(this.ServiceButton_Click);
             // 
             // FleetManagementButton
             // 
@@ -115,9 +103,9 @@
             // 
             // MaintenanceJobOperandButton
             // 
-            this.MaintenanceJobOperandButton.Location = new System.Drawing.Point(156, 309);
+            this.MaintenanceJobOperandButton.Location = new System.Drawing.Point(3, 105);
             this.MaintenanceJobOperandButton.Name = "MaintenanceJobOperandButton";
-            this.MaintenanceJobOperandButton.Size = new System.Drawing.Size(259, 68);
+            this.MaintenanceJobOperandButton.Size = new System.Drawing.Size(259, 97);
             this.MaintenanceJobOperandButton.TabIndex = 2;
             this.MaintenanceJobOperandButton.Text = "Maintenance Job Operand";
             this.MaintenanceJobOperandButton.UseVisualStyleBackColor = true;
@@ -128,7 +116,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(557, 450);
-            this.Controls.Add(this.MaintenanceJobOperandButton);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.IntroText);
             this.Name = "VehicleManagementForm";
@@ -144,7 +131,6 @@
         private System.Windows.Forms.Label IntroText;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Button JsonExporterButton;
-        private System.Windows.Forms.Button ServiceButton;
         private System.Windows.Forms.Button FleetManagementButton;
         private System.Windows.Forms.Button RentManagementButton;
         private System.Windows.Forms.Button MaintenanceJobOperandButton;

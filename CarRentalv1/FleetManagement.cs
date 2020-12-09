@@ -13,7 +13,7 @@ namespace CarRentalv1
     public partial class FleetManagement : Form
     {
         string type = "all";
-        VehicleRentalManagement _data = null;
+        private VehicleRentalManagement _data = null;
 
         public FleetManagement(VehicleRentalManagement vehicleRentalManagementModel)
         {

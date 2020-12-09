@@ -12,7 +12,7 @@ namespace CarRentalv1
 {
     public partial class RentManagement : Form
     {
-        VehicleRentalManagement _data = null; 
+        private VehicleRentalManagement _data = null;
         public RentManagement(VehicleRentalManagement vehicleRentalManagementModel)
         {
             this._data = vehicleRentalManagementModel;

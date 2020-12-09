@@ -12,7 +12,7 @@ namespace CarRentalv1
 {
     public partial class VehicleManagementForm : Form
     {
-        VehicleRentalManagement _data = null; 
+        private VehicleRentalManagement _data = null;
         public VehicleManagementForm(VehicleRentalManagement vehicleRentalManagementModel)
         {
             this._data = vehicleRentalManagementModel; 
@@ -62,7 +62,8 @@ namespace CarRentalv1
 
         private void JsonExporterButton_Click(object sender, EventArgs e)
         {
-
+            Json json = new Json(_data);
+            json.Show();
         }
 
         private void ServiceButton_Click(object sender, EventArgs e)

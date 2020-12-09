@@ -288,5 +288,28 @@ namespace CarRentalv1
             return false ;
         }
 
+        public bool SaveServiceOfVehicle(int vehicleId)
+        {
+            JsonManage jsonManage = new JsonManage();
+
+            object o = GetVehicleByID(vehicleId);
+            if ((o.GetType()).Equals(typeof(Car)))
+            {
+                jsonManage.SaveServiceOfVehicle(((Car)o).History, vehicleId);
+                return true;
+            }
+            else if ((o.GetType()).Equals(typeof(Truck)))
+            {
+                jsonManage.SaveServiceOfVehicle(((Truck)o).History, vehicleId);
+                return true;
+            }
+            return false;
+        }
+        public string DisplayServiceOfVehicle(int vehicleId)
+        {
+            JsonManage jsonManage = new JsonManage();
+            return jsonManage.DisplayServiceOfVehicle(vehicleId);
+        }
+
     }
 }

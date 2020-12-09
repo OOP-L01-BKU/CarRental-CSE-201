@@ -16,7 +16,7 @@ namespace CarRentalv1
         string garageName;
         int price;
 
-        VehicleRentalManagement _data = null;
+        private VehicleRentalManagement _data = null;
 
         public ServiceForFleet(VehicleRentalManagement vehicleRentalManagementModel)
         {

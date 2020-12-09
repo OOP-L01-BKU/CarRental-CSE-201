@@ -12,7 +12,7 @@ namespace CarRentalv1
 {
     public partial class AddRentForm : Form
     {
-        public VehicleRentalManagement _data = null; 
+        private VehicleRentalManagement _data = null; 
 
         public AddRentForm(VehicleRentalManagement vehicleRentalManagementModel)
         {
